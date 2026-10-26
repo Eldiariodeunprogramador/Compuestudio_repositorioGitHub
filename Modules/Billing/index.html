@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Módulo de facturación de Repositorio"><title>Facturación | Repositorio</title>
+  <link rel="stylesheet" href="billing.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="../../index.html"><span class="brand-mark">R</span><span><strong>Repositorio</strong><small>Sistema de gestión</small></span></a>
+    <p class="nav-label">MENÚ PRINCIPAL</p>
+    <nav aria-label="Navegación principal">
+      <a class="nav-link" href="../../index.html">⌂ <span>Inicio</span></a>
+      <a class="nav-link active" href="index.html">▤ <span>Facturación</span></a>
+      <a class="nav-link" href="../Customers/index.html">♙ <span>Clientes</span></a>
+      <a class="nav-link" href="../Products/index.html">▦ <span>Productos</span></a>
+      <a class="nav-link" href="../Services/index.html">⚙ <span>Servicios</span></a>
+    </nav>
+    <div class="sidebar-footer"><i></i> Sistema listo para usar</div>
+  </aside>
+  <main class="main-content">
+    <header class="topbar"><div><p class="eyebrow">MÓDULO DE VENTAS</p><h1>Facturación</h1><p class="subtitle">Administra las facturas y consulta el estado de tus ventas.</p></div><button class="primary-button" id="openForm">＋ Nueva factura</button></header>
+    <section class="stats-grid">
+      <article class="stat-card"><div class="stat-top"><span>Facturas registradas</span><b class="icon purple">▤</b></div><strong class="stat-value" id="invoiceCount">3</strong><small>En este ejemplo</small></article>
+      <article class="stat-card"><div class="stat-top"><span>Facturas pagadas</span><b class="icon green">✓</b></div><strong class="stat-value" id="paidCount">2</strong><small>Estado pagado</small></article>
+      <article class="stat-card"><div class="stat-top"><span>Pendientes de pago</span><b class="icon orange">◷</b></div><strong class="stat-value" id="pendingCount">1</strong><small>Requieren seguimiento</small></article>
+      <article class="stat-card"><div class="stat-top"><span>Total facturado</span><b class="icon blue">$</b></div><strong class="stat-value" id="totalBilled">$ 1.250.000</strong><small>Valores de demostración</small></article>
+    </section>
+    <section class="content-card">
+      <div class="section-heading"><div><h2>Listado de facturas</h2><p>Consulta, busca y registra las operaciones.</p></div><label class="search-box">⌕ <input id="searchInput" type="search" placeholder="Buscar factura o cliente..." aria-label="Buscar factura o cliente"></label></div>
+      <div class="table-wrap"><table><thead><tr><th>N.º FACTURA</th><th>CLIENTE</th><th>FECHA</th><th>VALOR</th><th>ESTADO</th><th>ACCIÓN</th></tr></thead><tbody id="invoiceTable">
+        <tr data-number="FAC-0001" data-customer="María Rodríguez" data-date="2026-10-20" data-amount="450000" data-status="paid"><td><strong>FAC-0001</strong></td><td><strong>María Rodríguez</strong><small>maria@example.com</small></td><td>2026-10-20</td><td class="amount">$ 450.000</td><td><span class="status paid">Pagada</span></td><td><button class="text-button view-button">Ver</button></td></tr>
+        <tr data-number="FAC-0002" data-customer="Carlos Gómez" data-date="2026-10-22" data-amount="325000" data-status="pending"><td><strong>FAC-0002</strong></td><td><strong>Carlos Gómez</strong><small>carlos@example.com</small></td><td>2026-10-22</td><td class="amount">$ 325.000</td><td><span class="status pending">Pendiente</span></td><td><button class="text-button view-button">Ver</button></td></tr>
+        <tr data-number="FAC-0003" data-customer="Laura Martínez" data-date="2026-10-25" data-amount="475000" data-status="paid"><td><strong>FAC-0003</strong></td><td><strong>Laura Martínez</strong><small>laura@example.com</small></td><td>2026-10-25</td><td class="amount">$ 475.000</td><td><span class="status paid">Pagada</span></td><td><button class="text-button view-button">Ver</button></td></tr>
+      </tbody></table></div><div class="table-footer"><span id="tableSummary">Mostrando 3 facturas</span><span>Moneda: COP (pesos colombianos)</span></div>
+    </section>
+    <section class="info-panel"><b>i</b><div><strong>Datos de demostración</strong><p>Las facturas agregadas aquí solo permanecen mientras la página está abierta. Para producción, conecta el módulo a una base de datos y configura la numeración, impuestos y requisitos legales aplicables.</p></div></section>
+    <footer class="footer">© 2026 Repositorio · Módulo de facturación</footer>
+  </main>
+  <dialog id="invoiceDialog"><form id="invoiceForm"><div class="dialog-heading"><div><p class="eyebrow">NUEVO REGISTRO</p><h2>Crear factura</h2></div><button type="button" class="close-button" id="closeForm">×</button></div>
+    <label>Nombre del cliente<input name="customer" required maxlength="100" placeholder="Ej. Andrea Pérez"></label><div class="form-row"><label>Fecha<input name="date" type="date" required></label><label>Valor (COP)<input name="amount" type="number" min="1" step="1" required placeholder="150000"></label></div><label>Estado de pago<select name="status"><option value="pending">Pendiente</option><option value="paid">Pagada</option></select></label><div class="dialog-actions"><button type="button" class="secondary-button" id="cancelForm">Cancelar</button><button type="submit" class="primary-button">Guardar factura</button></div>
+  </form></dialog>
+  <dialog id="detailDialog"><div class="dialog-heading"><div><p class="eyebrow">DETALLE</p><h2>Información de factura</h2></div><button type="button" class="close-button" id="closeDetail">×</button></div><div id="detailContent"></div></dialog>
+  <script>
+    const table=document.getElementById('invoiceTable'), form=document.getElementById('invoiceForm'), dialog=document.getElementById('invoiceDialog'), detail=document.getElementById('detailDialog');
+    const money=n=>new Intl.NumberFormat('es-CO',{style:'currency',currency:'COP',maximumFractionDigits:0}).format(n);
+    document.getElementById('openForm').onclick=()=>{form.reset();form.elements.date.value=new Date().toISOString().slice(0,10);dialog.showModal()};
+    ['closeForm','cancelForm'].forEach(id=>document.getElementById(id).onclick=()=>dialog.close());document.getElementById('closeDetail').onclick=()=>detail.close();
+    function update(){const rows=[...table.querySelectorAll('tr')],paid=rows.filter(r=>r.dataset.status==='paid').length,total=rows.reduce((s,r)=>s+Number(r.dataset.amount),0);document.getElementById('invoiceCount').textContent=rows.length;document.getElementById('paidCount').textContent=paid;document.getElementById('pendingCount').textContent=rows.length-paid;document.getElementById('totalBilled').textContent=money(total);}
+    function attachView(btn){btn.onclick=()=>{const r=btn.closest('tr');document.getElementById('detailContent').innerHTML='';[['Número',r.dataset.number],['Cliente',r.dataset.customer],['Fecha',r.dataset.date],['Valor',money(Number(r.dataset.amount))],['Estado',r.dataset.status==='paid'?'Pagada':'Pendiente']].forEach(([label,value])=>{const p=document.createElement('p');p.className='detail-row';const s=document.createElement('span'),b=document.createElement('strong');s.textContent=label;b.textContent=value;p.append(s,b);document.getElementById('detailContent').append(p)});detail.showModal()}}
+    document.querySelectorAll('.view-button').forEach(attachView);
+    form.onsubmit=e=>{e.preventDefault();const d=new FormData(form),customer=String(d.get('customer')).trim(),date=String(d.get('date')),amount=Number(d.get('amount')),status=String(d.get('status'));if(!customer||!date||amount<=0)return;const number='FAC-'+String(table.rows.length+1).padStart(4,'0'),row=document.createElement('tr');Object.assign(row.dataset,{number,customer,date,amount:String(amount),status});const values=[number,customer,date,money(amount),status==='paid'?'Pagada':'Pendiente'];values.forEach((value,i)=>{const td=document.createElement('td');if(i===0){const b=document.createElement('strong');b.textContent=value;td.append(b)}else if(i===1){const b=document.createElement('strong'),small=document.createElement('small');b.textContent=value;small.textContent='Sin correo registrado';td.append(b,small)}else if(i===3){td.className='amount';td.textContent=value}else if(i===4){const badge=document.createElement('span');badge.className='status '+status;badge.textContent=value;td.append(badge)}else td.textContent=value;row.append(td)});const action=document.createElement('td'),btn=document.createElement('button');btn.type='button';btn.className='text-button view-button';btn.textContent='Ver';action.append(btn);row.append(action);table.append(row);attachView(btn);dialog.close();update();filterRows()};
+    function filterRows(){const q=document.getElementById('searchInput').value.toLocaleLowerCase('es');let shown=0;[...table.rows].forEach(r=>{r.hidden=!r.innerText.toLocaleLowerCase('es').includes(q);if(!r.hidden)shown++});document.getElementById('tableSummary').textContent=`Mostrando ${shown} de ${table.rows.length} facturas`};document.getElementById('searchInput').addEventListener('input',filterRows);update();
+  </script>
+</body></html>
