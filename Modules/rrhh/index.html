@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Módulo de Recursos Humanos - Repositorio">
+  <title>Recursos Humanos | Repositorio</title>
+  <link rel="stylesheet" href="recursos.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark">R</span>
+      <span><strong>Repositorio</strong><small>Sistema de gestión</small></span>
+    </a>
+    <p class="nav-label">MENÚ PRINCIPAL</p>
+    <nav aria-label="Navegación principal">
+      <a class="nav-link" href="../../index.html">⌂ <span>Inicio</span></a>
+      <a class="nav-link" href="../Billing/index.html">▤ <span>Facturación</span></a>
+      <a class="nav-link" href="../Customers/index.html">♙ <span>Clientes</span></a>
+      <a class="nav-link" href="../Products/index.html">▦ <span>Productos</span></a>
+      <a class="nav-link" href="../Services/index.html">⚙ <span>Servicios</span></a>
+      <a class="nav-link active" href="index.html">👥 <span>RRHH</span></a>
+    </nav>
+    <div class="sidebar-footer"><i></i> Sistema listo para usar</div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GESTIÓN DE PERSONAL</p>
+        <h1>Recursos Humanos</h1>
+        <p class="subtitle">Administra empleados, cargos, áreas y estado del personal.</p>
+      </div>
+      <a href="#agregar" class="primary-button">＋ Nuevo empleado</a>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Total empleados</span>
+          <b class="icon teal">👥</b>
+        </div>
+        <strong class="stat-value">12</strong>
+        <small>Registrados en el sistema</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Activos</span>
+          <b class="icon green">✓</b>
+        </div>
+        <strong class="stat-value">10</strong>
+        <small>En actividad actualmente</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Áreas</span>
+          <b class="icon blue">◫</b>
+        </div>
+        <strong class="stat-value">5</strong>
+        <small>Departamentos organizados</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Inactivos</span>
+          <b class="icon orange">○</b>
+        </div>
+        <strong class="stat-value">2</strong>
+        <small>Retirados o suspendidos</small>
+      </article>
+    </section>
+
+    <section class="content-card">
+      <div class="section-heading">
+        <div>
+          <h2>Listado de empleados</h2>
+          <p>Consulta, busca y gestiona la información de cada colaborador.</p>
+        </div>
+        <div class="search-box">
+          <span>⌕</span>
+          <input type="text" placeholder="Buscar empleado..." aria-label="Buscar empleado">
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>NOMBRE COMPLETO</th>
+              <th>DOCUMENTO</th>
+              <th>CARGO</th>
+              <th>ÁREA</th>
+              <th>FECHA INGRESO</th>
+              <th>ESTADO</th>
+              <th>ACCIÓN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>María Fernanda López</strong></td>
+              <td>1.098.765.432</td>
+              <td>Gerente Administrativa</td>
+              <td>Dirección</td>
+              <td>2023-02-15</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-1" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Carlos Alberto Ruiz</strong></td>
+              <td>987.654.321</td>
+              <td>Desarrollador Full Stack</td>
+              <td>Tecnología</td>
+              <td>2023-06-01</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-2" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Jennifer Salazar M.</strong></td>
+              <td>1.123.456.789</td>
+              <td>Contadora</td>
+              <td>Financiera</td>
+              <td>2024-01-10</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-3" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Diego Armando Pérez</strong></td>
+              <td>765.432.109</td>
+              <td>Ejecutivo de Ventas</td>
+              <td>Comercial</td>
+              <td>2024-03-22</td>
+              <td><span class="status warning">Licencia</span></td>
+              <td><a href="#detalle-4" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Ana María Gutiérrez</strong></td>
+              <td>1.032.987.654</td>
+              <td>Auxiliar Administrativa</td>
+              <td>Administrativa</td>
+              <td>2022-11-05</td>
+              <td><span class="status inactive">Retirada</span></td>
+              <td><a href="#detalle-5" class="text-button">Ver</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <span>Mostrando 5 de 12 empleados</span>
+        <span>Última actualización: 2026-10-26</span>
+      </div>
+    </section>
+
+    <section class="info-panel">
+      <b>i</b>
+      <div>
+        <strong>Datos de demostración</strong>
+        <p>Registra la información real de tu equipo. Los datos personales deben manejarse conforme a la ley de protección de datos vigente.</p>
+      </div>
+    </section>
+
+    <footer class="footer">© 2026 Repositorio · Módulo de Recursos Humanos</footer>
+  </main>
+
+  <!-- Modal Agregar Empleado -->
+  <div class="modal-container" id="agregar">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">NUEVO REGISTRO</p>
+          <h2>Agregar empleado</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <form>
+        <div class="form-row">
+          <label>
+            Nombres
+            <input type="text" required maxlength="50" placeholder="Nombres">
+          </label>
+          <label>
+            Apellidos
+            <input type="text" required maxlength="50" placeholder="Apellidos">
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Tipo de documento
+            <select>
+              <option>Cédula de Ciudadanía</option>
+              <option>Cédula de Extranjería</option>
+              <option>Pasaporte</option>
+            </select>
+          </label>
+          <label>
+            Número de documento
+            <input type="text" required maxlength="20" placeholder="Sin puntos ni comas">
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Cargo
+            <input type="text" required maxlength="60" placeholder="Nombre del cargo">
+          </label>
+          <label>
+            Área / Departamento
+            <select>
+              <option>Dirección</option>
+              <option>Administrativa</option>
+              <option>Financiera</option>
+              <option>Comercial</option>
+              <option>Tecnología</option>
+              <option>Operativa</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Fecha de ingreso
+            <input type="date" required>
+          </label>
+          <label>
+            Estado
+            <select>
+              <option value="active">Activo</option>
+              <option value="warning">Licencia / Incapacidad</option>
+              <option value="inactive">Inactivo / Retirado</option>
+            </select>
+          </label>
+        </div>
+        <label>
+            Correo electrónico
+            <input type="email" maxlength="100" placeholder="correo@empresa.com">
+        </label>
+        <label>
+            Teléfono / Contacto
+            <input type="tel" maxlength="20" placeholder="Número de teléfono">
+        </label>
+        <div class="dialog-actions">
+          <a href="#" class="secondary-button">Cancelar</a>
+          <button type="submit" class="primary-button">Guardar empleado</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 1 -->
+  <div class="modal-container" id="detalle-1">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">FICHA DEL COLABORADOR</p>
+          <h2>María Fernanda López</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Documento</span><strong>1.098.765.432</strong></p>
+        <p class="detail-row"><span>Cargo</span><strong>Gerente Administrativa</strong></p>
+        <p class="detail-row"><span>Área</span><strong>Dirección</strong></p>
+        <p class="detail-row"><span>Fecha de ingreso</span><strong>15 de febrero de 2023</strong></p>
+        <p class="detail-row"><span>Estado</span><strong class="status active">Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 2 -->
+  <div class="modal-container" id="detalle-2">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">FICHA DEL COLABORADOR</p>
+          <h2>Carlos Alberto Ruiz</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Documento</span><strong>987.654.321</strong></p>
+        <p class="detail-row"><span>Cargo</span><strong>Desarrollador Full Stack</strong></p>
+        <p class="detail-row"><span>Área</span><strong>Tecnología</strong></p>
+        <p class="detail-row"><span>Fecha de ingreso</span><strong>1 de junio de 2023</strong></p>
+        <p class="detail-row"><span>Estado</span><strong class="status active">Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 3 -->
+  <div class="modal-container" id="detalle-3">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">FICHA DEL COLABORADOR</p>
+          <h2>Jennifer Salazar M.</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Documento</span><strong>1.123.456.789</strong></p>
+        <p class="detail-row"><span>Cargo</span><strong>Contadora</strong></p>
+        <p class="detail-row"><span>Área</span><strong>Financiera</strong></p>
+        <p class="detail-row"><span>Fecha de ingreso</span><strong>10 de enero de 2024</strong></p>
+        <p class="detail-row"><span>Estado</span><strong class="status active">Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 4 -->
+  <div class="modal-container" id="detalle-4">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">FICHA DEL COLABORADOR</p>
+          <h2>Diego Armando Pérez</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Documento</span><strong>765.432.109</strong></p>
+        <p class="detail-row"><span>Cargo</span><strong>Ejecutivo de Ventas</strong></p>
+        <p class="detail-row"><span>Área</span><strong>Comercial</strong></p>
+        <p class="detail-row"><span>Fecha de ingreso</span><strong>22 de marzo de 2024</strong></p>
+        <p class="detail-row"><span>Estado</span><strong class="status warning">Licencia</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 5 -->
+  <div class="modal-container" id="detalle-5">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">FICHA DEL COLABORADOR</p>
+          <h2>Ana María Gutiérrez</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Documento</span><strong>1.032.987.654</strong></p>
+        <p class="detail-row"><span>Cargo</span><strong>Auxiliar Administrativa</strong></p>
+        <p class="detail-row"><span>Área</span><strong>Administrativa</strong></p>
+        <p class="detail-row"><span>Fecha de ingreso</span><strong>5 de noviembre de 2022</strong></p>
+        <p class="detail-row"><span>Estado</span><strong class="status inactive">Retirada</strong></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
