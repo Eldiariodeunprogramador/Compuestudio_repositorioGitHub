@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel principal del sistema de gestión Repositorio.">
+  <title>Repositorio | Panel principal</title>
+  <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="index.html" aria-label="Inicio de Repositorio">
+      <span class="brand-mark">R</span>
+      <span><strong>Repositorio</strong><small>Sistema de gestión</small></span>
+    </a>
+    <p class="nav-label">MENÚ PRINCIPAL</p>
+    <nav class="navigation" aria-label="Navegación principal">
+      <a class="nav-link active" href="index.html"><span class="nav-icon">⌂</span> Inicio</a>
+      <a class="nav-link" href="Modules/Billing/index.html"><span class="nav-icon">▤</span> Facturación</a>
+      <a class="nav-link" href="Modules/Customers/index.html"><span class="nav-icon">♙</span> Clientes</a>
+      <a class="nav-link" href="Modules/Products/index.html"><span class="nav-icon">▦</span> Productos</a>
+      <a class="nav-link" href="Modules/Services/index.html"><span class="nav-icon">⚙</span> Servicios</a>
+    </nav>
+    <div class="sidebar-footer"><span class="status-dot"></span> Sistema listo para usar</div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PANEL DE CONTROL</p>
+        <h1>Bienvenido a Repositorio</h1>
+        <p class="subtitle">Administra las áreas principales de tu negocio desde un solo lugar.</p>
+      </div>
+      <div class="user-chip"><span class="avatar">A</span><span><strong>Administrador</strong><small>Usuario del sistema</small></span></div>
+    </header>
+
+    <section class="welcome-banner">
+      <div>
+        <span class="banner-tag">TU ESPACIO DE TRABAJO</span>
+        <h2>Todo organizado.<br>Todo a tu alcance.</h2>
+        <p>Selecciona un módulo para comenzar a gestionar la información.</p>
+      </div>
+      <div class="banner-art" aria-hidden="true">
+        <div class="art-card card-one">▦</div><div class="art-card card-two">▤</div><div class="art-card card-three">♙</div>
+        <div class="art-circle"></div>
+      </div>
+    </section>
+
+    <section class="section-heading">
+      <div><h2>Módulos del sistema</h2><p>Acceso directo a cada sección del proyecto.</p></div>
+      <span class="module-count">4 módulos</span>
+    </section>
+
+    <section class="module-grid" aria-label="Módulos disponibles">
+      <a class="module-card billing" href="Modules/Billing/index.html">
+        <div class="module-icon">▤</div><span class="card-arrow">↗</span>
+        <h3>Facturación</h3><p>Consulta y organiza las facturas y operaciones de venta.</p>
+        <span class="card-action">Abrir módulo <b>→</b></span>
+      </a>
+      <a class="module-card customers" href="Modules/Customers/index.html">
+        <div class="module-icon">♙</div><span class="card-arrow">↗</span>
+        <h3>Clientes</h3><p>Administra los datos y la información de tus clientes.</p>
+        <span class="card-action">Abrir módulo <b>→</b></span>
+      </a>
+      <a class="module-card products" href="Modules/Products/index.html">
+        <div class="module-icon">▦</div><span class="card-arrow">↗</span>
+        <h3>Productos</h3><p>Organiza el catálogo, los precios y el inventario.</p>
+        <span class="card-action">Abrir módulo <b>→</b></span>
+      </a>
+      <a class="module-card services" href="Modules/Services/index.html">
+        <div class="module-icon">⚙</div><span class="card-arrow">↗</span>
+        <h3>Servicios</h3><p>Registra los servicios disponibles y su información.</p>
+        <span class="card-action">Abrir módulo <b>→</b></span>
+      </a>
+    </section>
+
+    <section class="structure-panel">
+      <div class="structure-icon">⌘</div>
+      <div><h3>Proyecto modular</h3><p>Cada sección tiene su propia página HTML y hoja de estilos CSS. Así podrás mantener y ampliar el proyecto de forma ordenada.</p></div>
+    </section>
+    <footer class="footer">© 2026 Repositorio · Proyecto web modular</footer>
+  </main>
+</body>
+</html>
