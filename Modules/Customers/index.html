@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Módulo de clientes de Repositorio">
+  <title>Clientes | Repositorio</title>
+  <link rel="stylesheet" href="customers.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark">R</span>
+      <span><strong>Repositorio</strong><small>Sistema de gestión</small></span>
+    </a>
+    <p class="nav-label">MENÚ PRINCIPAL</p>
+    <nav aria-label="Navegación principal">
+      <a class="nav-link" href="../../index.html">⌂ <span>Inicio</span></a>
+      <a class="nav-link" href="../Billing/index.html">▤ <span>Facturación</span></a>
+      <a class="nav-link active" href="index.html">♙ <span>Clientes</span></a>
+      <a class="nav-link" href="../Products/index.html">▦ <span>Productos</span></a>
+      <a class="nav-link" href="../Services/index.html">⚙ <span>Servicios</span></a>
+    </nav>
+    <div class="sidebar-footer"><i></i> Sistema listo para usar</div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GESTIÓN DE CONTACTOS</p>
+        <h1>Clientes</h1>
+        <p class="subtitle">Administra la base de datos de tus clientes y su información.</p>
+      </div>
+      <a href="#agregar" class="primary-button">＋ Nuevo cliente</a>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Total de clientes</span>
+          <b class="icon teal">♙</b>
+        </div>
+        <strong class="stat-value">3</strong>
+        <small>Registrados en el sistema</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Clientes activos</span>
+          <b class="icon green">✓</b>
+        </div>
+        <strong class="stat-value">3</strong>
+        <small>Con compras recientes</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Compras totales</span>
+          <b class="icon blue">▤</b>
+        </div>
+        <strong class="stat-value">8</strong>
+        <small>Facturas asociadas</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Valor total</span>
+          <b class="icon orange">$</b>
+        </div>
+        <strong class="stat-value">$ 1.250.000</strong>
+        <small>Histórico facturado</small>
+      </article>
+    </section>
+
+    <section class="content-card">
+      <div class="section-heading">
+        <div>
+          <h2>Listado de clientes</h2>
+          <p>Consulta y registra la información de cada cliente.</p>
+        </div>
+        <div class="search-box">
+          <span>⌕</span>
+          <input type="text" placeholder="Buscar cliente..." aria-label="Buscar cliente">
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>NOMBRE</th>
+              <th>CORREO</th>
+              <th>DOCUMENTO</th>
+              <th>TELÉFONO</th>
+              <th>ESTADO</th>
+              <th>ACCIÓN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>María Rodríguez</strong></td>
+              <td>maria@example.com</td>
+              <td>1.012.345.678</td>
+              <td>300 123 4567</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-1" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Carlos Gómez</strong></td>
+              <td>carlos@example.com</td>
+              <td>1.098.765.432</td>
+              <td>310 987 6543</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-2" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Laura Martínez</strong></td>
+              <td>laura@example.com</td>
+              <td>1.023.456.789</td>
+              <td>320 456 7890</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-3" class="text-button">Ver</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <span>Mostrando 3 clientes</span>
+        <span>Última actualización: 2026-10-26</span>
+      </div>
+    </section>
+
+    <section class="info-panel">
+      <b>i</b>
+      <div>
+        <strong>Datos de demostración</strong>
+        <p>Para uso real, conecta con una base de datos y valida la información según las normativas locales de protección de datos.</p>
+      </div>
+    </section>
+
+    <footer class="footer">© 2026 Repositorio · Módulo de clientes</footer>
+  </main>
+
+  <!-- Modal Agregar Cliente -->
+  <div class="modal-container" id="agregar">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">NUEVO REGISTRO</p>
+          <h2>Agregar cliente</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <form>
+        <label>
+          Nombre completo
+          <input type="text" required maxlength="100" placeholder="Ej. Andrea Pérez">
+        </label>
+        <div class="form-row">
+          <label>
+            Correo electrónico
+            <input type="email" required placeholder="correo@ejemplo.com">
+          </label>
+          <label>
+            Documento
+            <input type="text" required maxlength="20" placeholder="NIT / Cédula">
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Teléfono
+            <input type="text" maxlength="20" placeholder="3XX XXX XXXX">
+          </label>
+          <label>
+            Estado
+            <select>
+              <option value="active">Activo</option>
+              <option value="inactive">Inactivo</option>
+            </select>
+          </label>
+        </div>
+        <div class="dialog-actions">
+          <a href="#" class="secondary-button">Cancelar</a>
+          <button type="submit" class="primary-button">Guardar cliente</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 1 -->
+  <div class="modal-container" id="detalle-1">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+          <h2>Información del cliente</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Nombre</span><strong>María Rodríguez</strong></p>
+        <p class="detail-row"><span>Correo</span><strong>maria@example.com</strong></p>
+        <p class="detail-row"><span>Documento</span><strong>1.012.345.678</strong></p>
+        <p class="detail-row"><span>Teléfono</span><strong>300 123 4567</strong></p>
+        <p class="detail-row"><span>Estado</span><strong>Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 2 -->
+  <div class="modal-container" id="detalle-2">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+          <h2>Información del cliente</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Nombre</span><strong>Carlos Gómez</strong></p>
+        <p class="detail-row"><span>Correo</span><strong>carlos@example.com</strong></p>
+        <p class="detail-row"><span>Documento</span><strong>1.098.765.432</strong></p>
+        <p class="detail-row"><span>Teléfono</span><strong>310 987 6543</strong></p>
+        <p class="detail-row"><span>Estado</span><strong>Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 3 -->
+  <div class="modal-container" id="detalle-3">
+    <div class="modal-overlay"></div>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+          <h2>Información del cliente</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Nombre</span><strong>Laura Martínez</strong></p>
+        <p class="detail-row"><span>Correo</span><strong>laura@example.com</strong></p>
+        <p class="detail-row"><span>Documento</span><strong>1.023.456.789</strong></p>
+        <p class="detail-row"><span>Teléfono</span><strong>320 456 7890</strong></p>
+        <p class="detail-row"><span>Estado</span><strong>Activo</strong></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

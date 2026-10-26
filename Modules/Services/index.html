@@ -1,11 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Módulo de servicios de Repositorio">
+  <title>Servicios | Repositorio</title>
+  <link rel="stylesheet" href="services.css">
 </head>
 <body>
-    
+  <aside class="sidebar">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark">R</span>
+      <span><strong>Repositorio</strong><small>Sistema de gestión</small></span>
+    </a>
+    <p class="nav-label">MENÚ PRINCIPAL</p>
+    <nav aria-label="Navegación principal">
+      <a class="nav-link" href="../../index.html">⌂ <span>Inicio</span></a>
+      <a class="nav-link" href="../Billing/index.html">▤ <span>Facturación</span></a>
+      <a class="nav-link" href="../Customers/index.html">♙ <span>Clientes</span></a>
+      <a class="nav-link" href="../Products/index.html">▦ <span>Productos</span></a>
+      <a class="nav-link active" href="index.html">⚙ <span>Servicios</span></a>
+    </nav>
+    <div class="sidebar-footer"><i></i> Sistema listo para usar</div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CATÁLOGO</p>
+        <h1>Servicios</h1>
+        <p class="subtitle">Administra los servicios que ofreces, sus precios y estados.</p>
+      </div>
+      <a href="#agregar" class="primary-button">＋ Nuevo servicio</a>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Total servicios</span>
+          <b class="icon teal">⚙</b>
+        </div>
+        <strong class="stat-value">4</strong>
+        <small>Registrados</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Activos</span>
+          <b class="icon green">✓</b>
+        </div>
+        <strong class="stat-value">3</strong>
+        <small>Disponibles</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+          <span>Promedio precio</span>
+          <b class="icon blue">$</b>
+        </div>
+        <strong class="stat-value">$ 185.000</strong>
+        <small>Por servicio</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-top">
+         span>Inactivos</span>
+          <b class="icon orange">○</b>
+        </div>
+        <strong class="stat-value">1</strong>
+        <small>No disponibles</small>
+      </article>
+    </section>
+
+    <section class="content-card">
+      <div class="section-heading">
+        <div>
+          <h2>Listado de servicios</h2>
+          <p>Consulta y gestiona cada servicio de tu catálogo.</p>
+        </div>
+        <div class="search-box">
+          <span>⌕</span>
+          <input type="text" placeholder="Buscar servicio..." aria-label="Buscar servicio">
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>NOMBRE</th>
+              <th>DESCRIPCIÓN</th>
+              <th>PRECIO</th>
+              <th>DURACIÓN EST.</th>
+              <th>ESTADO</th>
+              <th>ACCIÓN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mantenimiento Equipos</strong></td>
+              <td>Revisión y limpieza de hardware</td>
+              <td>$ 120.000</td>
+              <td>2 horas</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-1" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Desarrollo Web</strong></td>
+              <td>Creación y diseño de sitios web</td>
+              <td>$ 850.000</td>
+              <td>15 días</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-2" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Soporte Técnico</strong></td>
+              <td>Asistencia remota y presencial</td>
+              <td>$ 60.000</td>
+              <td>Por hora</td>
+              <td><span class="status active">Activo</span></td>
+              <td><a href="#detalle-3" class="text-button">Ver</a></td>
+            </tr>
+            <tr>
+              <td><strong>Capacitación</strong></td>
+              <td>Formación en herramientas ofimáticas</td>
+              <td>$ 45.000</td>
+              <td>—</td>
+              <td><span class="status inactive">Suspendido</span></td>
+              <td><a href="#detalle-4" class="text-button">Ver</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <span>Mostrando 4 servicios</span>
+        <span>Última actualización: 2026-10-26</span>
+      </div>
+    </section>
+
+    <section class="info-panel">
+      <b>i</b>
+      <div>
+        <strong>Datos de demostración</strong>
+        <p>Personaliza esta información según los servicios reales que brindas a tus clientes.</p>
+      </div>
+    </section>
+
+    <footer class="footer">© 2026 Repositorio · Módulo de servicios</footer>
+  </main>
+
+  <!-- Modal Agregar Servicio -->
+  <div class="modal-container" id="agregar">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">NUEVO REGISTRO</p>
+          <h2>Agregar servicio</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <form>
+        <label>
+          Nombre del servicio
+          <input type="text" required maxlength="100" placeholder="Ej. Consultoría IT">
+        </label>
+        <label>
+          Descripción
+          <input type="text" maxlength="200" placeholder="Breve descripción del servicio">
+        </label>
+        <div class="form-row">
+          <label>
+            Precio
+            <input type="text" required placeholder="$ 0">
+          </label>
+          <label>
+            Duración estimada
+            <input type="text" placeholder="Ej. 3 horas / 5 días">
+          </label>
+        </div>
+        <label>
+          Categoría
+          <select>
+            <option>Técnico</option>
+            <option>Desarrollo</option>
+            <option>Capacitación</option>
+            <option>Consultoría</option>
+            <option>Otros</option>
+          </select>
+        </label>
+        <label>
+          Estado
+          <select>
+            <option value="active">Activo</option>
+            <option value="inactive">Inactivo / Suspendido</option>
+          </select>
+        </label>
+        <div class="dialog-actions">
+          <a href="#" class="secondary-button">Cancelar</a>
+          <button type="submit" class="primary-button">Guardar servicio</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 1 -->
+  <div class="modal-container" id="detalle-1">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+          <h2>Información del servicio</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Nombre</span><strong>Mantenimiento Equipos</strong></p>
+        <p class="detail-row"><span>Descripción</span><strong>Revisión y limpieza de hardware</strong></p>
+        <p class="detail-row"><span>Precio</span><strong>$ 120.000</strong></p>
+        <p class="detail-row"><span>Duración est.</span><strong>2 horas</strong></p>
+        <p class="detail-row"><span>Estado</span><strong>Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 2 -->
+  <div class="modal-container" id="detalle-2">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+          <h2>Información del servicio</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Nombre</span><strong>Desarrollo Web</strong></p>
+        <p class="detail-row"><span>Descripción</span><strong>Creación y diseño de sitios web</strong></p>
+        <p class="detail-row"><span>Precio</span><strong>$ 850.000</strong></p>
+        <p class="detail-row"><span>Duración est.</span><strong>15 días</strong></p>
+        <p class="detail-row"><span>Estado</span><strong>Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 3 -->
+  <div class="modal-container" id="detalle-3">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+          <h2>Información del servicio</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Nombre</span><strong>Soporte Técnico</strong></p>
+        <p class="detail-row"><span>Descripción</span><strong>Asistencia remota y presencial</strong></p>
+        <p class="detail-row"><span>Precio</span><strong>$ 60.000</strong></p>
+        <p class="detail-row"><span>Duración est.</span><strong>Por hora</strong></p>
+        <p class="detail-row"><span>Estado</span><strong>Activo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Detalle 4 -->
+  <div class="modal-container" id="detalle-4">
+    <a href="#" class="modal-overlay"></a>
+    <div class="modal-box">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">DETALLE</p>
+          <h2>Información del servicio</h2>
+        </div>
+        <a href="#" class="close-button">×</a>
+      </div>
+      <div class="detail-content">
+        <p class="detail-row"><span>Nombre</span><strong>Capacitación</strong></p>
+        <p class="detail-row"><span>Descripción</span><strong>Formación en herramientas ofimáticas</strong></p>
+        <p class="detail-row"><span>Precio</span><strong>$ 45.000</strong></p>
+        <p class="detail-row"><span>Duración est.</span><strong>—</strong></p>
+        <p class="detail-row"><span>Estado</span><strong>Suspendido</strong></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
